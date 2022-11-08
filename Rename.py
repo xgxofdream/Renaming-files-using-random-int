@@ -14,6 +14,7 @@ import shutil
 Original_folder = r'F:\MYH\Original/'
 Renamed_folder = r'F:\MYH\Renamed/'
 Excel_of_Names = r'F:\MYH\rename.xlsx'
+Initial_number = 1
 
 # 创建Excel文件
 workbook = xlwt.Workbook(encoding= 'ascii')
@@ -50,7 +51,7 @@ if filelist:
     for key, value in Dict_Name_Increasing_Order.items():
         print(str(key) + "  ->  " + str(value))
         
-        New_Name = str(Row_number) + ".JPG"
+        New_Name = str(Row_number + Initial_number) + ".JPG"
         # 往Excel文件中写入老的文件名（value），与之对应的随机数字（key），和通过排序得到的新文件名（New_Name）
         worksheet.write(Row_number,0,value)
         worksheet.write(Row_number,1,key)
